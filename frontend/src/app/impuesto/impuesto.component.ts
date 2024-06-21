@@ -20,10 +20,37 @@ export class ImpuestoComponent {
   impuestoJSON: string = '';
   renta_calculada: string = '';
   valor_excedente: number = 0;
+  maximos = {
+    'Salud': 15238.60,
+    'Vivienda': 3809.65,
+    'Educacion': 3809.65,
+    'Alimentacion': 3809.65,
+    'Vestimenta': 3809.65
+  };
 
   constructor() {}
 
   Calcular() {
+    if (this.deduccionVivienda > this.maximos['Vivienda']) {
+      alert(`El valor máximo para Vivienda es ${this.maximos['Vivienda']}`);
+      return;
+    }
+    if (this.deduccionEducacion > this.maximos['Educacion']) {
+      alert(`El valor máximo para Educación es ${this.maximos['Educacion']}`);
+      return;
+    }
+    if (this.deduccionVestimenta > this.maximos['Vestimenta']) {
+      alert(`El valor máximo para Vestimenta es ${this.maximos['Vestimenta']}`);
+      return;
+    }
+    if (this.deduccionAlimentacion > this.maximos['Alimentacion']) {
+      alert(`El valor máximo para Alimentación es ${this.maximos['Alimentacion']}`);
+      return;
+    }
+    if (this.deduccionSalud > this.maximos['Salud']) {
+      alert(`El valor máximo para Salud es ${this.maximos['Salud']}`);
+      return;
+    }
     this.deducciones= this.deduccionVivienda + this.deduccionEducacion + this.deduccionVestimenta + this.deduccionAlimentacion + this.deduccionSalud;
     if (this.deducciones > 15238.60){
       this.deduccionVivienda = 0;

@@ -32,13 +32,15 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Username</th>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Login</th>
           <th scope="col">Email</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let usuario of usuarios">
+          <td>{{ usuario.userId }}</td>
           <td>{{ usuario.name }}</td>
           <td>{{ usuario.username }}</td>
           <td>{{ usuario.email }}</td>

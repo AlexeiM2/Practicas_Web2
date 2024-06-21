@@ -12,6 +12,7 @@ export class FormularioComponent {
   valor: number | null = null;
   tipo: string = 'Ninguno';
   facturas: Gasto[] = [];
+ 
 
   constructor(private gastoService: GastoService) {}
 
@@ -21,6 +22,10 @@ export class FormularioComponent {
       this.valor = null;
       return;
     }
+
+    
+  
+    
 
     const factura: Gasto = {
       id: 0,
